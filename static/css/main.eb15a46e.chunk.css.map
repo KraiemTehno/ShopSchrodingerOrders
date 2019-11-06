@@ -1,0 +1,1 @@
+{"version":3,"sources":["Home.css","Persik.css"],"names":[],"mappings":"AAAA,aACI,UAAa,CACb,aACF,CCHF,QACE,aAAc,CACd,SAAU,CACV,eAAgB,CAChB,gBACF","file":"main.eb15a46e.chunk.css","sourcesContent":[".HeaderTitle{\r\n    color:#808080; \r\n    font-size: 8pt\r\n  }",".Persik {\n  display: block;\n  width: 30%;\n  max-width: 240px;\n  margin: 20px auto;\n}\n"]}
