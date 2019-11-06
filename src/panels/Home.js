@@ -6,33 +6,35 @@ import Button from '@vkontakte/vkui/dist/components/Button/Button';
 import Group from '@vkontakte/vkui/dist/components/Group/Group';
 import Cell from '@vkontakte/vkui/dist/components/Cell/Cell';
 import Div from '@vkontakte/vkui/dist/components/Div/Div';
-import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
+import List from '@vkontakte/vkui/dist/components/List/List';
 import Link from '@vkontakte/vkui/dist/components/Link/Link';
-import Input from '@vkontakte/vkui/dist/components/Input/Input';
+import TextArea from '@vkontakte/vkui/dist/components/TextArea/TextArea';
 import './Home.css';
 
 const Home = (props) => (
 	<Panel id={props.id}>
-		<PanelHeader>Новая заявка</PanelHeader>
+		<PanelHeader>Shop Schrodinger. Прием заказов.</PanelHeader>
 		
-		<Group title="Заполните как можно более подробно чтобы я рассмотрел вашу заявку быстрее.">
-			<Cell>
-				Что хочешь?
-				<Input/>
-			</Cell>
-			<Cell>
-				Когда хочешь?
-				<Input/>
-			</Cell>
-			<Cell>
-				Пожелания к заказу
-				<Input/>
-			</Cell>
+		<Group  title="Новая заявка"
+		description="Заполните как можно более подробно чтобы мы рассмотрели вашу заявку быстрее.">
+			<List>
+				<Cell>
+					Что хочешь?
+					<TextArea id='Commodity'/>
+				</Cell>
+				<Cell>
+					Когда хочешь?
+					<TextArea id='CommodityEndDate'/>
+				</Cell>
+				<Cell>
+					Пожелания к заказу
+					<TextArea id='CommodityDescription'/>
+				</Cell>	
+			</List>
 			<Div>
-				<Button size="xl" level="2" onClick={props.go} data-to="persik">
+				<Button size="xl" level="2" onClick={props.go} data-to="goodRequest">
 					Отправить
 				</Button>
-				<Link href='https://vk.com/shopschrodinger'>В группу</Link>
 			</Div>
 		</Group>
 	</Panel>
