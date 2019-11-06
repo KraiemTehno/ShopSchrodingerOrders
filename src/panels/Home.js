@@ -8,21 +8,31 @@ import Cell from '@vkontakte/vkui/dist/components/Cell/Cell';
 import Div from '@vkontakte/vkui/dist/components/Div/Div';
 import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
 import Link from '@vkontakte/vkui/dist/components/Link/Link';
+import Input from '@vkontakte/vkui/dist/components/Input/Input';
+import './Home.css';
 
 const Home = (props) => (
 	<Panel id={props.id}>
 		<PanelHeader>Новая заявка</PanelHeader>
 		
-		<Group title="Сделать заявку">
-			<Div style='color:#808080; font-size: 8pt'>
-				Заполните как можно более подробно чтобы я рассмотрел вашу заявку быстрее.
-			</Div>
-			<hr/>
+		<Group title="Заполните как можно более подробно чтобы я рассмотрел вашу заявку быстрее.">
+			<Cell>
+				Что хочешь?
+				<Input/>
+			</Cell>
+			<Cell>
+				Когда хочешь?
+				<Input/>
+			</Cell>
+			<Cell>
+				Пожелания к заказу
+				<Input/>
+			</Cell>
 			<Div>
 				<Button size="xl" level="2" onClick={props.go} data-to="persik">
-					Show me the Persik, please
+					Отправить
 				</Button>
-				<Link getRootRef='https://vk.com/shopschrodinger'>В группу</Link>
+				<Link href='https://vk.com/shopschrodinger'>В группу</Link>
 			</Div>
 		</Group>
 	</Panel>
