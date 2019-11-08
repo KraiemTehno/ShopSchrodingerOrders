@@ -19,7 +19,7 @@ const App = () => {
 	const [isEditor, setIsEditor] = useState(null);
 	const [isAdmin, setIsAdmin] = useState(null);
 	const [isMemberGroup, setIsMemberGroup] = useState(null);
-	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
+	const [popout, setPopout] = useState(<ScreenSpinner size='small' />);
 
 	useEffect(() => {
 		connect.subscribe(({ detail: { type, data }}) => {

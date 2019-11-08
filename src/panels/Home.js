@@ -8,9 +8,12 @@ import Group from '@vkontakte/vkui/dist/components/Group/Group';
 import Cell from '@vkontakte/vkui/dist/components/Cell/Cell';
 import Div from '@vkontakte/vkui/dist/components/Div/Div';
 import List from '@vkontakte/vkui/dist/components/List/List';
-import Link from '@vkontakte/vkui/dist/components/Link/Link';
 import TextArea from '@vkontakte/vkui/dist/components/TextArea/TextArea';
 
+const sendReq= e => {
+
+	Home.props.go(e);
+};
 const Home = (props) => (
 	<Panel id={props.id}>
 		<PanelHeader>{props.fetchedGroup}</PanelHeader>
@@ -32,14 +35,14 @@ const Home = (props) => (
 				</Cell>	
 			</List>
 			<Div>
-				<Button size="xl" level="2" onClick={props.go} data-to="GoodRequest">
+				<Button size="xl" level="2" onClick={sendReq} data-to="GoodRequest">
 					Отправить
 				</Button>
 			</Div>
 		</Group>
-			{!props.isMemberGroup && <Div>
+			{!props.isMemberGroup && <Div id="memberGroupButton">
 				<Button size="xl" level="2" onClick={()=>connect.sendPromise("VKWebAppJoinGroup", {"group_id": 139136005})
-				.then(data => { if (data.result===true){}})}>
+				.then(data => { if (data.result===true){document.getElementById("memberGroupButton").remove();}})}>
 					Вступить в группу
 				</Button>
 			</Div>}
