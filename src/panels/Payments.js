@@ -13,35 +13,24 @@ import Link from '@vkontakte/vkui/dist/components/Link/Link';
 
 const osName = platform();
 
-const GoodRequests = props => (
+const Payments = props => (
 	<Panel id={props.id}>
 		<PanelHeader
 			left={<HeaderButton onClick={props.go} data-to="home">
 				{osName === IOS ? <Icon28ChevronBack/> : <Icon24Back/>}
 			</HeaderButton>}
-		>
-			Shop Schrodinger. Прием заказов.
+		>       {props.fetchedGroup} 
 		</PanelHeader>
 		<Group
-		description="Заявка успешно принята.">
-			<Div>
-				<Button size="xl" level="2" onClick={props.go} data-to="home">
-					Сделать еще заказ
-				</Button>	
-			</Div>
-			
-			<Div>
-				<Button size="xl" level="2" level="secondary">
-					<Link href='https://vk.com/shopschrodinger'>Завершить</Link>
-				</Button>				
-			</Div>
+		title="Предстоящие оплаты">
+            
 		</Group>
 	</Panel>
 );
 
-GoodRequests.propTypes = {
+Payments.propTypes = {
 	id: PropTypes.string.isRequired,
 	go: PropTypes.func.isRequired,
 };
 
-export default GoodRequests;
+export default Payments;
